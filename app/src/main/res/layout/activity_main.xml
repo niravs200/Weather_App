@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- City Label -->
+    <TextView
+        android:id="@+id/lblEnterCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30sp"
+        android:textColor="@color/colorBlack"
+        android:text="@string/EnterCity"
+        android:layout_marginStart="10sp"/>
+
+    <!-- City Input -->
+    <EditText
+        android:id="@+id/etEnterCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_margin="10sp"
+        android:hint="@string/EnterCity"
+        android:backgroundTint="@color/colorEditText"
+        android:layout_below="@+id/lblEnterCity"/>
+
+    <!-- Button to fetch weather information according to location -->
+    <Button
+        android:id="@+id/btnGetWeather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="@string/btnGetWeather"
+        android:background="@color/colorButton"
+        android:fontFamily="sans-serif"
+        android:layout_below="@+id/etEnterCity"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorWhite"/>
+
+    <!-- Weather Information -->
+    <RelativeLayout
+        android:id="@+id/lv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5sp"
+        android:layout_marginStart="2sp"
+        android:layout_marginEnd="2sp"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:layout_below="@+id/btnGetWeather">
+
+        <!-- City the information is fetched of  -->
+        <TextView
+            android:id="@+id/lblCity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif-monospace"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:layout_marginTop="50sp"
+            android:layout_centerHorizontal="true" />
+
+        <!-- Weather Icon -->
+        <ImageView
+            android:contentDescription="WeatherIcon"
+            android:id="@+id/lblWeatherIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5sp"
+            android:layout_below="@+id/lblCity"
+            android:layout_centerHorizontal="true"/>
+
+        <!-- Temperature -->
+        <TextView
+            android:id="@+id/lblTemperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5sp"
+            android:fontFamily="serif-monospace"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:layout_below="@+id/lblWeatherIcon"
+            android:layout_centerHorizontal="true"/>
+
+        <LinearLayout
+            android:id="@+id/lv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5sp"
+            android:layout_below="@+id/lblTemperature"
+            android:layout_centerHorizontal="true">
+
+            <!-- Minimum Temperature -->
+            <TextView
+                android:id="@+id/lblMin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif-monospace"
+                android:textSize="18sp"
+                android:layout_weight="1"/>
+
+            <!-- Maximum Temperature -->
+            <TextView
+                android:id="@+id/lblMax"
+                android:layout_marginLeft="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif-monospace"
+                android:textSize="18sp"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <!-- Main weather -->
+        <TextView
+            android:id="@+id/lblMainWeather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:textSize="25sp"
+            android:layout_marginTop="5sp"
+            android:layout_below="@+id/lv2"
+            android:layout_centerHorizontal="true"/>
+
+        <!-- Brief description of the weather -->
+        <TextView
+            android:id="@+id/lblDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:textSize="30sp"
+            android:layout_marginTop="5sp"
+            android:layout_below="@+id/lblMainWeather"
+            android:layout_centerHorizontal="true"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5sp"
+            android:layout_below="@id/lblDescription"
+            android:layout_centerHorizontal="true"
+            android:weightSum="2">
+
+            <!-- Humidity -->
+            <TextView
+                android:id="@+id/lblHumidity"
+                android:textAlignment="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20sp"
+                android:fontFamily="sans-serif"
+                android:textSize="20sp"
+                android:layout_weight="1" />
+
+            <!-- Clouds -->
+            <TextView
+                android:textAlignment="center"
+                android:id="@+id/lblCloud"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:textSize="20sp"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
